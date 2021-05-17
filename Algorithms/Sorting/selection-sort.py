@@ -1,3 +1,4 @@
+# Selection sort algorithm
 def selectionSort(l):
 
     n = len(l)
@@ -14,3 +15,7 @@ def selectionSort(l):
 
 
 print(selectionSort(list(map(int, input().split()))))
+
+# the inner loop runs n-1 + n-2 + .....1 which is n(n-1)/2 times
+# Time complexity of this program = Theta(n^2)
+

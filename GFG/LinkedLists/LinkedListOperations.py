@@ -31,8 +31,38 @@ def printList(ll):
         p = p.next
 
 
+def searchInList(ll, x):
+
+    p = ll.head
+
+    while p is not None:
+        if p.data == x:
+            return True
+        p = p.next
+    return False
+
+
+def returnNodeAtGivenIndexBase1(ll, k):
+
+    i = 1
+    p = ll.head
+    while i < k:
+        p = p.next
+        i = i + 1
+    return p.data
+        
+
 if __name__ == '__main__':
     l = list(map(int, input().split()))
 
+    # Create Linked List from input array
     ll = createLinkedList(l)
+
+    # Print the created linked list
     printList(ll)
+
+    # Search if the entered element exists in the created linked list
+    print(searchInList(ll, int(input('Enter a number to check its presence : '))))
+
+    # Print node at a given index in the created linked list
+    print(returnNodeAtGivenIndexBase1(ll, int(input('Find nth node in the linked list, Enter n: '))))
